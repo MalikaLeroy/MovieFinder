@@ -1,0 +1,93 @@
+.content {
+  padding: 3.5rem 0 3.5rem 0;
+  margin: 0 $container-padding 0 $container-padding;
+  border-top: 1px solid $secondary-bg-color;
+
+  @include mediaMin($desktop) {
+    padding-bottom: 5.5rem;
+  }
+  header {
+    margin-bottom: 2rem;
+    @include mediaMin($desktop) {
+      margin-bottom: 3rem;
+    }
+    > div {
+      display: flex;
+      gap: 5rem;
+      flex-wrap: wrap;
+      @include mediaMin(375px) {
+        gap: 2rem;
+      }
+    }
+    span {
+      font-size: 1.2rem;
+      width: 100%;
+      @include mediaMin(375px) {
+        padding: 1.2rem 0;
+        width: initial;
+      }
+    }
+    .sort {
+      gap: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      > div,
+      details {
+        z-index: 2;
+        width: calc(100% - 6rem);
+        @include mediaMin(375px) {
+          width: 19.3rem;
+        }
+      }
+    }
+    .filters {
+      width: 100%;
+      @include mediaMin(375px) {
+        width: initial;
+      }
+      > div:last-child {
+        width: 100%;
+        @include mediaMin(375px) {
+          width: 11.9rem;
+        }
+      }
+      .react-datepicker {
+        position: absolute;
+      }
+      display: flex;
+      gap: 0.9rem;
+
+      flex-wrap: wrap;
+      span + div,
+      details {
+        z-index: 1;
+        width: calc(100% - 6rem);
+        @include mediaMin(375px) {
+          width: 11.9rem;
+        }
+      }
+    }
+  }
+  > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 13.8rem);
+    grid-gap: 3rem;
+    justify-content: center;
+    padding-bottom: 3.5rem;
+    position: relative;
+    z-index:-1;
+    @include mediaMin(375px) {
+      justify-content: center;
+    }
+    @include mediaMin(530px) {
+      justify-content: space-between;
+    }
+    @include mediaMin($desktop) {
+      padding-bottom: 5.5rem;
+    }
+    > div {
+      width: 13.8rem;
+    }
+  }
+}

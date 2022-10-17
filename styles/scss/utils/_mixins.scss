@@ -1,0 +1,12 @@
+@mixin mediaMin($_min-width) {
+    @media (min-width: $_min-width) {
+        & {
+            @content;
+        }
+    }
+}
+@mixin emptyAfterBefore{
+    content: "";
+    display: inline-block;
+    position: absolute;
+}

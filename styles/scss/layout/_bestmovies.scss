@@ -1,0 +1,61 @@
+.content {
+    padding: 3.5rem 0 3.5rem $container-padding;
+    position: relative;
+    @include mediaMin($desktop) {
+      padding-left: 0;
+      padding-bottom: 5.5rem;
+    }
+    > div {
+      &[class*="button"] {
+        background-color: transparentize($secondary-bg-color, 0.3);
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50rem;
+        &::after {
+          font-size: 2.55rem;
+          font-weight: bold;
+          color: $ternary-bg-color;
+        }
+      }
+      &[class$="next"] {
+        margin-left: 0;
+        right: 3rem;
+        &::after {
+          margin-left: 0.5rem;
+        }
+      }
+      &[class$="prev"],&[class$="disabled"] {
+        left: 3rem;
+        &::after {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    h2 {
+      @include mediaMin($desktop) {
+        padding: 0 $container-padding 0 $container-padding;
+        margin-top: 2.1rem;
+      }
+    }
+  }
+  .swiperCustom {
+    @include mediaMin($desktop) {
+      width: 80.5rem;
+    }
+    > div > div {
+      width: 8.6rem;
+      text-align: center;
+      > div > div {
+        text-align: left;
+        width: 8.6rem;
+        @include mediaMin($tablet) {
+          margin: 0 auto;
+        }
+        @include mediaMin($desktop) {
+          width: 13.8rem;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  

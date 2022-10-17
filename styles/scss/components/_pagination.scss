@@ -1,0 +1,33 @@
+.content {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 4rem);
+      grid-gap: 1.5rem;
+      justify-content: space-between;
+      @include mediaMin(707px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    a {
+      cursor: pointer;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      transition: $transition-bg-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      border: 2px solid $secondary-bg-color;
+      border-radius: $border-radius-form;
+      &:hover,
+      &:active {
+        background-color: $secondary-bg-color;
+      }
+    }
+  }
+  

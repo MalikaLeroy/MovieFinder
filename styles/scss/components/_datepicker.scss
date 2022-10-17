@@ -1,0 +1,132 @@
+.datePicker {
+    width: 100%;
+    > button {
+      font-size: 1.2rem;
+      font-family: $primary-font-family;
+      font-weight: bold;
+      color: $secondary-font-color;
+      overflow: visible;
+      border-radius: $border-radius-form;
+      background-color: inherit;
+      border: 1px solid $primary-border-color;
+      width: 12.1rem;
+      padding: 1.1rem 2rem 1.1rem 2rem;
+      height: 4rem;
+      margin-top: 4rem;
+      width: 100%;
+      cursor: pointer;
+      background-color: $primary-bg-color;
+      line-height: normal;
+      @include mediaMin(375px) {
+        width: 11.9rem;
+        margin-top: 0;
+      }
+      & + div {
+        z-index: 2;
+        @include mediaMin(375px) {
+          position: relative;
+        }
+      }
+      &.open {
+        background-color: $secondary-bg-color;
+      }
+    }
+    .datePickerCalendar {
+      margin-top: 1.5rem;
+      @include mediaMin(375px) {
+        width: calc(100% - 6rem);
+      }
+      border: 0;
+      font-family: $primary-font-family;
+      font-size: 1.2rem;
+      color: $primary-font-color;
+      background-color: $secondary-bg-color;
+      border-radius: $border-radius-form;
+      position: absolute;
+      z-index: 2;
+      @include mediaMin(375px) {
+        width: 31.5rem;
+        right: 0;
+      }
+      div[class$="triangle"] {
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-width: 0 0.8rem 0.8rem 0.8rem;
+        border-color: transparent transparent $secondary-bg-color transparent;
+        left: calc(50% - 0.8rem);
+        top: -0.8rem;
+        @include mediaMin(375px) {
+          left: inherit;
+          right: 5.1rem;
+        }
+      }
+  
+      > button {
+        width: 10rem;
+        height: 4.7rem;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.824.948a.527.527 0 0 0 0-.785.634.634 0 0 0-.848 0l-4.8 4.444a.527.527 0 0 0 0 .786l4.8 4.444a.634.634 0 0 0 .848 0 .527.527 0 0 0 0-.785L1.45 5 5.824.948Z' fill='%23FFF' fill-rule='nonzero'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center center;
+        &[class$="disabled"] {
+          display: none;
+        }
+        & + button {
+          transform: rotate(180deg);
+        }
+        span {
+          &::before {
+            display: none;
+          }
+        }
+      }
+      > div:last-child {
+        > div:first-child {
+          background-color: inherit;
+          border-bottom: inherit;
+          font-size: 1.4rem;
+          color: inherit;
+          padding: 1.8rem;
+        }
+        > div:last-child {
+          margin: 0.4rem 1rem 1rem 1rem;
+          > div {
+            max-width: 100%;
+            width: 100%;
+            height: 12.8rem;
+            > div {
+              flex: 0 0 25%;
+              margin: 0;
+              font-size: 1.4rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+              &:hover {
+                background-color: $primary-bg-color;
+              }
+  
+              border-radius: $border-radius-form;
+              &[tabindex="0"] {
+                background-color: $ternary-bg-color;
+              }
+              &[class$="selected"] {
+                background-color: $ternary-bg-color;
+                background-color: darken($ternary-bg-color, 20%);
+              }
+              &[class$="today"] {
+                font-weight: normal;
+              }
+              &[class$="--disabled"] {
+                color: $secondary-font-color;
+                &:hover {
+                  background-color: inherit;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

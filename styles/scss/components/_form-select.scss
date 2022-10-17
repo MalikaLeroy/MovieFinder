@@ -1,0 +1,62 @@
+.customSelect {
+    position: absolute;
+    cursor: pointer;
+    border-radius: $border-radius-form;
+    input {
+      display: none;
+    }
+    summary {
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: $border-radius-form;
+      border: 1px solid $primary-border-color;
+      list-style: none;
+      padding: 1.1rem 2rem 1.1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    overflow: hidden;
+    transition: all 400ms ease-in-out;
+    &[open] {
+      background-color: $secondary-bg-color;
+      max-height: 99rem;
+      summary {
+        border-radius: $border-radius-form $border-radius-form 0 0;
+      }
+    }
+    &:not([open]) {
+      transition: height 1s ease;
+      max-height: 4rem;
+      summary {
+        background-color: $primary-bg-color;
+      }
+    }
+    ul {
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 0 0 $border-radius-form $border-radius-form;
+      background-color: $secondary-bg-color;
+      li {
+        border-bottom: 1px solid $primary-border-color;
+        border-left: 1px solid $primary-border-color;
+        border-right: 1px solid $primary-border-color;
+        &:last-child {
+          border-radius: 0 0 $border-radius-form $border-radius-form;
+          label {
+            border-radius: 0 0 $border-radius-form $border-radius-form;
+          }
+        }
+        label {
+          cursor: pointer;
+          display: block;
+          padding: 1.1rem 2rem;
+          transition: $transition-bg-color;
+          &:hover {
+            background-color: $primary-bg-color; 
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,17 @@
+.movieCard{
+    h3{
+        color:$primary-font-color;
+        font-size: 1.4rem;
+        font-weight: bold;
+        padding: 0.7rem 0 0.15rem 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+    img{
+     border-radius: $border-radius;   
+    }
+}

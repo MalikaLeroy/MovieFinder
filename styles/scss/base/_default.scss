@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  body {
+    font-size: 1.6em;
+    color: $secondary-font-color;
+    font-family: $primary-font-family;
+    background-color: $primary-bg-color;
+    line-height: 1.6rem;
+    h2 {
+      color: $primary-font-color;
+      font-weight: bold;
+      margin-bottom: 2.6rem;
+      @include mediaMin($desktop) {
+        font-size: 2.6rem;
+        margin-bottom: 4.9rem;
+        margin-top: 4.2rem;
+      }
+    }
+    input:focus {
+      outline: none;
+    }
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      border-width: 0;
+      user-select: none;
+    }
+    .img-gradient {
+      position: absolute;
+      width: 100vw;
+      overflow: hidden;
+      z-index: -1;
+      @include mediaMin($tablet) {
+        width: 100%;
+      }
+      img {
+        opacity: 0.2;
+      }
+      &::before {
+        @include emptyAfterBefore;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image: linear-gradient(
+          170deg,
+          transparentize($primary-bg-color, 1),
+          transparentize($primary-bg-color, 0) 75%
+        );
+        @include mediaMin($desktop) {
+          background-image: linear-gradient(
+            170deg,
+            transparentize($primary-bg-color, 1),
+            transparentize($primary-bg-color, 0) 75%
+          );
+        }
+      }
+    }
+    main {
+      width: 100%;
+
+      @include mediaMin(1024px) {
+        max-width: $max;
+        margin: 0 auto;
+      }
+    }
+  }
+  .loader {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    svg {
+      transform-origin: 2rem 1.5rem;
+      scale: 30%;
+    }
+  }
+  .error {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    span {
+      display: inline-block;
+      border-radius: $border-radius-form;
+      font-size: 1.4rem;
+      position: relative;
+      padding: 1rem 1.5rem 1rem 3.5rem;
+      &::before {
+        color: $primary-font-color;
+        @include emptyAfterBefore;
+        content: "!";
+        width: 2rem;
+        height: 2rem;
+        background-color: $ternary-bg-color;
+        border-radius: 50rem;
+        text-align: center;
+        line-height: 2rem;
+        top: 0.7rem;
+        left: 0.7rem;
+      }
+    }
+  }
+  .close {
+    opacity: 0;
+    transition: opacity 50ms ease-out;
+  }
+  .animate {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 50ms ease-in, transform 100ms ease-in;
+  }
+  .open {
+    transition: opacity 50ms ease-in, transform 100ms ease-in;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

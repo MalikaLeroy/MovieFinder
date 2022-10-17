@@ -1,0 +1,31 @@
+// Colors
+$primary-font-color:#ffffff !default;
+$secondary-font-color:#586E94 !default;
+$primary-bg-color:#0D1D38 !default;
+$secondary-bg-color:#253755 !default;
+$ternary-bg-color:#2586FA !default;
+$primary-border-color:#586E94 !default;
+$primary-separator-color:#1E2D48 !default;
+
+// Font
+$primary-font-family: "Roboto", Helvetica, Arial, sans-serif !default;
+
+// Responsive breakpoints
+$phone:576px !default;
+$tablet:768px !default;
+$desktop:992px !default;
+
+// Max width
+$max:1024px !default;
+
+/*Container sizes*/
+$container-max-width:1024px !default;
+$container-padding:3rem !default;
+
+/*Border radius*/
+$border-radius:1rem !default;
+$border-radius-form:1.4rem !default;
+
+/*Animations*/
+
+$transition-bg-color: 0.2s ease background !default;

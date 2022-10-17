@@ -1,0 +1,20 @@
+$fontList:(
+    Roboto Roboto-Regular normal,
+    Roboto Roboto-Bold bold,
+);
+@each $fontName, $fontType, $fontWeight in $fontList {
+    @font-face {
+        font-family: '#{$fontName}';
+        src: url('./../../../public/fonts/#{$fontName}/#{$fontType}.eot');
+
+        src: local('#{$fontName} @if $fontWeight != normal {#{$fontWeight}}'), local('#{$fontType}'),
+            url('./../../../public/fonts/#{$fontName}/#{$fontType}.eot?#iefix') format('embedded-opentype'),
+            url('./../../../public/fonts/#{$fontName}/#{$fontType}.woff2') format('woff2'),
+            url('./../../../public/fonts/#{$fontName}/#{$fontType}.woff') format('woff'),
+            url('./../../../public/fonts/#{$fontName}/#{$fontType}.ttf') format('truetype'),
+            url('./../../../public/fonts/#{$fontName}/#{$fontType}.svg##{$fontType}') format('svg');
+        font-weight: $fontWeight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
